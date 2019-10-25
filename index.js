@@ -1,6 +1,22 @@
 // const { fetchMyIP } = require('./iss');
 // const { fetchCoordsByIP } = require('./iss');
 // const { fetchISSFlyOverTimes } = require('./iss');
+const { nextISSTimesForMyLocation } = require('./iss');
+
+nextISSTimesForMyLocation((error, passTimes) => {
+  if (error) {
+    console.log("It didn't work!", error);
+  }
+  // success, print out the deets!
+  console.log(passTimes);
+});
+
+
+
+//////////////////////////////////////////
+//  Old manual tests from creating      //
+//         fetch functions              //
+//////////////////////////////////////////
 
 // fetchMyIP((error, ip) => {
 //   if (error) {
