@@ -12,7 +12,7 @@ const request = require('request');
  *   - The IP address as a string (null if error). Example: "162.245.144.188"
  */
 
-const fetchMyIP = function (callback) {
+const fetchMyIP = function(callback) {
   const url = 'https://api.ipify.org?format=json';
 
   // use request to fetch IP address from JSON API
@@ -37,7 +37,7 @@ const fetchMyIP = function (callback) {
 };
 
 
-const fetchCoordsByIP = function (ip, callback) {
+const fetchCoordsByIP = function(ip, callback) {
 
   const url = `https://ipvigilante.com/${ip}`;
 
@@ -76,7 +76,7 @@ const fetchCoordsByIP = function (ip, callback) {
 
 // coords = {latitude: '49.27670', longitude: '-123.130000'}
 
-const fetchISSFlyOverTimes = function (coords, callback) {
+const fetchISSFlyOverTimes = function(coords, callback) {
   const url = `http://api.open-notify.org/iss-pass.json?lat=${coords.latitude}&lon=${coords.longitude}`;
 
   request(url, (error, response, body) => {
@@ -99,17 +99,17 @@ const fetchISSFlyOverTimes = function (coords, callback) {
 };
 
 /**
- * Orchestrates multiple API requests in order to determine the 
+ * Orchestrates multiple API requests in order to determine the
  * next 5 upcoming ISS fly overs for the user's current location.
  * Input:
- *   - A callback with an error or results. 
+ *   - A callback with an error or results.
  * Returns (via Callback):
  *   - An error, if any (nullable)
  *   - The fly-over times as an array (null if error):
  *     [ { risetime: <number>, duration: <number> }, ... ]
  */
 
-const nextISSTimesForMyLocation = function (callback) {
+const nextISSTimesForMyLocation = function(callback) {
 
 
   fetchMyIP((error, ip) => {
@@ -128,9 +128,9 @@ const nextISSTimesForMyLocation = function (callback) {
         }
 
         callback(null, passes);
-      })
-    })
-  })
+      });
+    });
+  });
 };
 
 
