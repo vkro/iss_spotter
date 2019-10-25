@@ -20,10 +20,10 @@
 // });
 
 
-// fetchISSFlyOverTimes({latitude: '49.27670', longitude: '-123.130000'}, (error, data) => {
+// fetchISSFlyOverTimes({latitude: '49.27670', longitude: '-123.130000'}, (error, passTimes) => {
 //   if (error) {
 //     console.log('It didn\'t work! ', error);
 //     return;
 //   }
-//   console.log('It worked! Returned coords: ', data);
+//   console.log('It worked! Returned coords: ', passTimes);
 // });
