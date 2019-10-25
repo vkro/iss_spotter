@@ -35,7 +35,7 @@ const fetchMyIP = function(callback) {
 
 const fetchCoordsByIP = function(ip, callback) {
 
-  const url = 'https://ipvigilante.com/' + ip;
+  const url = `https://ipvigilante.com/${ip}`;
 
   request(url, (error, response, body) => {
 
@@ -59,4 +59,4 @@ const fetchCoordsByIP = function(ip, callback) {
 
 
 
-module.exports = { fetchMyIP, fetchCoordsByIP };
+module.exports = { fetchCoordsByIP };
